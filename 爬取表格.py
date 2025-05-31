@@ -21,8 +21,12 @@ time.sleep(5)  # 简单等待，实际应用中可以使用 WebDriverWait 进行
 
 # 查找表格元素
 table = driver.find_element(By.TAG_NAME, 'table')
-
 rows = table.find_elements(By.TAG_NAME, 'tr')
+
+# 这种写法已经在selenium4中被弃用
+# table = driver.find_element_by_tag_name('table')
+# rows = table.find_elements_by_tag_name('tr')
+
 data = []
 
 for row in rows:
